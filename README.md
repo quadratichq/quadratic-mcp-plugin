@@ -1,34 +1,48 @@
-# Cursor plugin template
+# Quadratic MCP Cursor Plugin
 
-Build and publish Cursor Marketplace plugins from a single repo.
+This repository packages the hosted Quadratic MCP server as a Cursor plugin.
+Installing it connects Cursor to Quadratic spreadsheets through the production
+streamable HTTP MCP endpoint:
 
-Two starter plugins are included:
+```json
+{
+  "mcpServers": {
+    "quadratic": {
+      "type": "streamable-http",
+      "url": "https://mcp.quadratichq.com/mcp"
+    }
+  }
+}
+```
 
-- **starter-simple**: rules and skills only
-- **starter-advanced**: rules, skills, agents, commands, hooks, MCP, and scripts
+## Included
 
-## Getting started
+- `plugins/quadratic-mcp/mcp.json` adds the hosted Quadratic MCP server.
+- `plugins/quadratic-mcp/rules/` provides light guidance for using Quadratic MCP safely.
+- `plugins/quadratic-mcp/skills/` adds an on-demand spreadsheet workflow skill.
+- `plugins/quadratic-mcp/assets/logo.svg` is the marketplace logo.
 
-[Use this template](https://github.com/cursor/plugin-template/generate) to create a new repository, then customize:
+## Usage
 
-1. `.cursor-plugin/marketplace.json`: set marketplace `name`, `owner`, and `metadata`.
-2. `plugins/*/.cursor-plugin/plugin.json`: set `name` (lowercase kebab-case), `displayName`, `author`, `description`, `keywords`, `license`, and `version`.
-3. Replace placeholder rules, skills, agents, commands, hooks, scripts, and logos.
+After installing the plugin in Cursor, open a chat and ask to work with a
+Quadratic spreadsheet. If you are not authenticated yet, ask Cursor to run the
+Quadratic MCP `auth` tool with the `login` action and complete the device auth
+flow.
 
-To add more plugins, see `docs/add-a-plugin.md`.
+Example prompts:
 
-## Single plugin vs multi-plugin
+- "Open my Budget 2026 Quadratic file and summarize it."
+- "Create a Quadratic spreadsheet from this CSV."
+- "Add a Python code cell that analyzes sales by month."
+- "Show me the schema for my connected Postgres database."
 
-This template defaults to **multi-plugin** (multiple plugins in one repo).
+## Development
 
-For a **single plugin**, move your plugin folder contents to the repository root, keep one `.cursor-plugin/plugin.json`, and remove `.cursor-plugin/marketplace.json`.
+Validate the plugin manifest and referenced files:
 
-## Submission checklist
+```bash
+node scripts/validate-template.mjs
+```
 
-- Each plugin has a valid `.cursor-plugin/plugin.json`.
-- Plugin names are unique, lowercase, and kebab-case.
-- `.cursor-plugin/marketplace.json` entries map to real plugin folders.
-- All frontmatter metadata is present in rule, skill, agent, and command files.
-- Logos are committed and referenced with relative paths.
-- `node scripts/validate-template.mjs` passes.
-- Repository link is ready for submission to the Cursor team (Slack or `kniparko@anysphere.com`).
+The marketplace manifest lives at `.cursor-plugin/marketplace.json`. The plugin
+manifest lives at `plugins/quadratic-mcp/.cursor-plugin/plugin.json`.

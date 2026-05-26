@@ -1,23 +1,18 @@
 {
-  "name": "cursor-plugin-starters",
+  "name": "quadratic-mcp",
   "owner": {
-    "name": "Your Org",
-    "email": "plugins@example.com"
+    "name": "Quadratic",
+    "email": "support@quadratichq.com"
   },
   "metadata": {
-    "description": "Starter marketplace template for Cursor plugins",
+    "description": "Cursor plugin for the hosted Quadratic MCP server",
     "version": "0.1.0"
   },
   "plugins": [
     {
-      "name": "starter-simple",
-      "source": "./plugins/starter-simple",
-      "description": "Minimal plugin with rules and skills only"
-    },
-    {
-      "name": "starter-advanced",
-      "source": "./plugins/starter-advanced",
-      "description": "Full-featured plugin with rules, skills, agents, commands, hooks, and MCP"
+      "name": "quadratic-mcp",
+      "source": "./plugins/quadratic-mcp",
+      "description": "Connect Cursor to Quadratic spreadsheets through MCP"
     }
   ]
 }

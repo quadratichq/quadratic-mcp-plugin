@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "quadratic": {
+      "type": "streamable-http",
+      "url": "https://mcp.quadratichq.com/mcp"
+    }
+  }
+}

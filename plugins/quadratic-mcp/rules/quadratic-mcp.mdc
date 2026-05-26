@@ -1,0 +1,19 @@
+---
+description: Guidance for working with Quadratic spreadsheets through MCP
+alwaysApply: false
+---
+
+# Quadratic MCP
+
+Use the `quadratic` MCP server when the user asks to inspect, create, import,
+analyze, or edit Quadratic spreadsheets.
+
+- Authenticate with `auth` action `login` before accessing private files.
+- Use `files_read` to locate files and `files_write` to open or create them.
+- Read spreadsheet context before fetching large ranges; prefer summaries,
+  outlines, and targeted ranges over full-sheet reads.
+- Use table references such as `TableName[Column]` for table data instead of
+  infinite A1 ranges.
+- Before writing cells, tables, formulas, or code, check the target area and
+  leave at least one empty row or column between new content and existing data.
+- Batch related reads or writes when possible to reduce tool calls.

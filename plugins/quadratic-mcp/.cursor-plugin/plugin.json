@@ -1,0 +1,17 @@
+{
+  "name": "quadratic-mcp",
+  "displayName": "Quadratic MCP",
+  "version": "0.1.0",
+  "description": "Connect Cursor to Quadratic spreadsheets through the hosted Quadratic MCP server.",
+  "author": {
+    "name": "Quadratic",
+    "email": "support@quadratichq.com",
+    "url": "https://www.quadratichq.com"
+  },
+  "license": "MIT",
+  "keywords": ["quadratic", "mcp", "spreadsheet", "data", "python", "sql"],
+  "logo": "assets/logo.svg",
+  "mcpServers": "mcp.json",
+  "rules": ["rules/quadratic-mcp.mdc"],
+  "skills": ["skills/quadratic-spreadsheet/SKILL.md"]
+}
