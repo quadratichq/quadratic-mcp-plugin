@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.quadratichq/quadratic-mcp",
+  "title": "Quadratic",
+  "description": "Connect AI assistants to Quadratic spreadsheets: open and summarize files, create spreadsheets from CSV data, add Python code cells for analysis, and query connected databases like Postgres. Hosted, remote streamable-HTTP endpoint with no local install.",
+  "websiteUrl": "https://www.quadratichq.com",
+  "repository": {
+    "url": "https://github.com/quadratichq/quadratic-mcp-plugin",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.quadratichq.com/mcp"
+    }
+  ]
+}
